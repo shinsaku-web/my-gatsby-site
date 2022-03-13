@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 
 type Props = {
   pageTitle: string;
@@ -7,9 +7,22 @@ type Props = {
 };
 
 const Layout: React.VFC<Props> = ({ pageTitle, children }) => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      site {
+        id
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
   return (
     <div>
-      <title>{pageTitle}</title>
+      <title>
+        {pageTitle} | {data.site.siteMetadata.title}
+      </title>
+      <header>{data.site.siteMetadata.title}</header>
       <nav>
         <ul>
           <li>
@@ -17,6 +30,9 @@ const Layout: React.VFC<Props> = ({ pageTitle, children }) => {
           </li>
           <li>
             <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
       </nav>
