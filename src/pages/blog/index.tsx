@@ -54,7 +54,7 @@ const BlogPage = ({ data }: PageProps<DataProps>) => {
 };
 
 export const query = graphql`
-  query {
+  query MyBlogIndexQuery {
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {
