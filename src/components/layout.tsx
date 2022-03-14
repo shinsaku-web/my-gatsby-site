@@ -8,7 +8,7 @@ type Props = {
 
 const Layout: React.VFC<Props> = ({ pageTitle, children }) => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       site {
         id
         siteMetadata {
