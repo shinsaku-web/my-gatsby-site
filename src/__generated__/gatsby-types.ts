@@ -3556,33 +3556,25 @@ type ImageSharpSortInput = {
   readonly order: Maybe<ReadonlyArray<Maybe<SortOrderEnum>>>;
 };
 
-type pageUsersshinsakusasakiDesktopmyGatsbySitesrcpagesblogmdxSlugTsx4065149238QueryVariables = Exact<{
+type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_1_Query = { readonly site: Maybe<(
+    Pick<Site, 'id'>
+    & { readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }
+  )> };
+
+type BlogDetailQueryQueryVariables = Exact<{
   id: Maybe<Scalars['String']>;
 }>;
 
 
-type pageUsersshinsakusasakiDesktopmyGatsbySitesrcpagesblogmdxSlugTsx4065149238Query = { readonly mdx: Maybe<(
+type BlogDetailQueryQuery = { readonly mdx: Maybe<(
     Pick<Mdx, 'body'>
     & { readonly frontmatter: Maybe<(
       Pick<MdxFrontmatter, 'title' | 'date' | 'hero_image_alt' | 'hero_image_credit_link' | 'hero_image_credit_text'>
       & { readonly hero_image: Maybe<{ readonly childImageSharp: Maybe<Pick<ImageSharp, 'gatsbyImageData'>> }> }
     )> }
-  )> };
-
-type pageUsersshinsakusasakiDesktopmyGatsbySitesrcpagesblogindexTsx2689841516QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type pageUsersshinsakusasakiDesktopmyGatsbySitesrcpagesblogindexTsx2689841516Query = { readonly allMdx: { readonly nodes: ReadonlyArray<(
-      Pick<Mdx, 'id' | 'slug'>
-      & { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title'>> }
-    )> } };
-
-type staticUsersshinsakusasakiDesktopmyGatsbySitesrccomponentslayoutTsx909450008QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-type staticUsersshinsakusasakiDesktopmyGatsbySitesrccomponentslayoutTsx909450008Query = { readonly site: Maybe<(
-    Pick<Site, 'id'>
-    & { readonly siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }
   )> };
 
 type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
@@ -3610,6 +3602,14 @@ type GatsbyImageSharpFluid_withWebp_tracedSVGFragment = Pick<ImageSharpFluid, 't
 type GatsbyImageSharpFluid_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'sizes'>;
 
 type GatsbyImageSharpFluid_withWebp_noBase64Fragment = Pick<ImageSharpFluid, 'aspectRatio' | 'src' | 'srcSet' | 'srcWebp' | 'srcSetWebp' | 'sizes'>;
+
+type MyBlogIndexQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type MyBlogIndexQueryQuery = { readonly allMdx: { readonly nodes: ReadonlyArray<(
+      Pick<Mdx, 'id' | 'slug'>
+      & { readonly frontmatter: Maybe<Pick<MdxFrontmatter, 'date' | 'title'>> }
+    )> } };
 
 type PagesQueryQueryVariables = Exact<{ [key: string]: never; }>;
 

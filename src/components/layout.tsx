@@ -2,8 +2,8 @@ import * as React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
 
 type Props = {
-  pageTitle: string;
-  children: React.ReactNode;
+  pageTitle?: string;
+  children?: React.ReactNode;
 };
 
 const Layout: React.VFC<Props> = ({ pageTitle, children }) => {

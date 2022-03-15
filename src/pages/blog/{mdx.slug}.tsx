@@ -1,24 +1,28 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import Layout from "../../components/layout";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const BlogPost = ({ data }: any) => {
-  const image: any = getImage(data.mdx.frontmatter.hero_image);
-  console.log(image);
+const BlogPost: React.FC<PageProps<GatsbyTypes.BlogDetailQueryQuery>> = ({
+  data,
+}) => {
+  const image: any = getImage(data.mdx?.frontmatter?.hero_image);
 
   return (
-    <Layout pageTitle={data.mdx.frontmatter.title}>
-      <p>{data.mdx.frontmatter.date}</p>
-      <GatsbyImage image={image} alt={data.mdx.frontmatter.hero_image_alt} />
-      <MDXRenderer>{data.mdx.body}</MDXRenderer>
+    <Layout pageTitle={data.mdx?.frontmatter?.title}>
+      <p>{data.mdx?.frontmatter?.date}</p>
+      <GatsbyImage
+        image={image}
+        alt={data.mdx?.frontmatter?.hero_image_alt || ""}
+      />
+      <MDXRenderer>{data?.mdx?.body || "MyBodyIsUndefined"}</MDXRenderer>
     </Layout>
   );
 };
 
 export const query = graphql`
-  query ($id: String) {
+  query BlogDetailQuery($id: String) {
     mdx(id: { eq: $id }) {
       frontmatter {
         title
